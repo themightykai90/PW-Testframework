@@ -1,26 +1,27 @@
-# Demo Todo App
+# PW Test Framework
 
-This is a demo Todo application built using Playwright for end-to-end testing.
+This repository uses Playwright for UI and API testing.
 
-## Description
+## Test Layers
 
-The application demonstrates how to use Playwright to automate and test a simple Todo application. The tests cover basic functionalities such as adding new todo items and ensuring the input field is cleared after adding an item.
+- UI tests: browser-driven tests in tests/.
+- API tests: request-level tests in tests/api/.
+- Shared test data tooling: faker-based generators in fixtures/dataFactory.ts.
 
 ## Setup
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/demo-todo-app.git
-    cd demo-todo-app
-    ```
-
-2. Install dependencies:
-    ```sh
-    npm install
-    ```
+1. Clone the repository.
+2. Install dependencies with npm install.
 
 ## Running Tests
 
-To run the tests, use the following command:
-```sh
-npx playwright test
+- Run all tests: npm test
+- Run UI tests only: npm run test:ui
+- Run API tests only: npm run test:api
+- Run smoke tests only: npm run test:smoke
+- Open Playwright HTML report: npm run report
+
+## Environment Variables
+
+- UI_BASE_URL: base URL for UI tests. Default is https://www.saucedemo.com
+- API_BASE_URL: base URL for API tests. Default is https://dummyjson.com
